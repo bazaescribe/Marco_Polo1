@@ -7,35 +7,27 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+public class PlayActivity extends ActionBarActivity implements View.OnClickListener{
 
     final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_play);
 
-        Button btnOne = (Button)findViewById(R.id.buttonExplore);
-        btnOne.setOnClickListener(this);
-
-        Button btnTwo = (Button)findViewById(R.id.buttonViewCards);
-        btnTwo.setOnClickListener(this);
-
-        Button btnThree = (Button)findViewById(R.id.buttonJugar);
-        btnThree.setOnClickListener(this);
+        ImageButton buttonBack = (ImageButton)findViewById(R.id.backButton);
+        buttonBack.setOnClickListener(this);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_play, menu);
         return true;
     }
 
@@ -59,20 +51,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         int idView = viewClicked.getId();
 
         switch (idView){
-            case R.id.buttonExplore:
-                Log.d(LOG_TAG,"Explorar mapa");
-                Intent intent = new Intent(this, MapsActivity.class);
+            case R.id.backButton:
+                Log.d(LOG_TAG,"------------ATRAS------------");
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-                break;
-            case R.id.buttonViewCards:
-                Log.d(LOG_TAG,"Ver cartas recolectadas");
-                Intent intent1 = new Intent(this, DeckActvity.class);
-                startActivity(intent1);
-                break;
-            case R.id.buttonJugar:
-                Log.d(LOG_TAG,"Ver cartas recolectadas");
-                Intent intent2 = new Intent(this, PlayActivity.class);
-                startActivity(intent2);
                 break;
         }
     }
