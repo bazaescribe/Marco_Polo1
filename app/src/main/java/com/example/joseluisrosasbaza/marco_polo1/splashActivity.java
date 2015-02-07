@@ -1,17 +1,37 @@
 package com.example.joseluisrosasbaza.marco_polo1;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
-public class splashActivity extends ActionBarActivity {
+public class splashActivity extends ActionBarActivity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        Thread welcomeThread = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    super.run();
+                    sleep(2500);  //Delay of 2.5 seconds
+                } catch (Exception e) {
+
+                } finally {
+                    Intent intent = new Intent(splashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        welcomeThread.start();
     }
 
 
@@ -36,4 +56,6 @@ public class splashActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
