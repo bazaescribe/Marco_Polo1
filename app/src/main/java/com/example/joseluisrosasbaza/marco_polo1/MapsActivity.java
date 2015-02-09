@@ -1,8 +1,16 @@
 package com.example.joseluisrosasbaza.marco_polo1;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.android.gms.internal.b;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -10,7 +18,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity {
 
+    private LocationManager lm;
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +70,26 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
+        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        double latitude = location.getLatitude();
+        double longitud = location.getLongitude();
+
         mMap.setMyLocationEnabled(true);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Mi Primer Marcador"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marcador"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitud), 15));
+
+        // 19.430802, -99.200792
+        if(latitude == latitude && longitud == longitud){
+            Context context = getApplicationContext();
+            CharSequence text = "Encontraste Algo!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
+
 }

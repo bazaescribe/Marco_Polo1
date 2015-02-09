@@ -8,7 +8,7 @@
     android:background="@color/background_material_light"
     android:orientation="horizontal">
 
-
+    <!--TOOLBAR-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="fill_parent"
             android:layout_height="55dp"
-            android:background="?attr/colorPrimaryDark"
+            android:background="?attr/colorPrimary"
             android:title="HOLA">
         <TextView
             android:layout_width="wrap_content"
@@ -54,8 +54,9 @@
 
     </LinearLayout>
 
+    <!--Botones Verticales-->
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerVertical="true"
@@ -63,42 +64,67 @@
         android:layout_alignParentEnd="true"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="80dp"
+        android:paddingTop="130dp"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:id="@+id/LayoutLinear"
         android:weightSum="3">
 
+        <!--Botón Jugar-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
-        <Button
-            android:layout_marginTop="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Jugar"
-            android:id="@+id/buttonJugar"
-            android:textSize="@dimen/abc_dropdownitem_icon_width"
-            android:background="@drawable/custom_button"
-            android:clickable="false"
-            android:textColor="#fd434343" />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                android:text="Jugar"
+                android:id="@+id/buttonJugar"
+                android:textSize="@dimen/abc_dropdownitem_icon_width"
+                android:background="@drawable/custom_button"
+                android:clickable="false"
+                android:textColor="#fd434343" />
+        </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Ver mis cartas"
-            android:id="@+id/buttonViewCards"
-            android:textSize="@dimen/abc_dropdownitem_icon_width"
-            android:clickable="false"
-            android:background="@drawable/custom_button"
-            android:textColor="#FD434343" />
+        <!--Botón Ver mis cartas-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                    android:layout_width="150dp"
+                    android:layout_height="300dp"
+                    android:text="Ver mis cartas"
+                    android:id="@+id/buttonViewCards"
+                    android:textSize="@dimen/abc_dropdownitem_icon_width"
+                    android:clickable="false"
+                    android:background="@drawable/custom_button"
+                    android:textColor="#FD434343" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Botón explorar-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:paddingTop="450dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="250dp">
 
         <Button
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text=""
             android:id="@+id/buttonExplore"
             android:onClick="sendMessage"
             android:textSize="@dimen/abc_dropdownitem_icon_width"
             android:singleLine="true"
-            android:background="@drawable/custom_background"/>
+            android:background="@drawable/custom_background"
+            android:layout_gravity="right" />
 
     </LinearLayout>
 

@@ -28,7 +28,7 @@
                 android:layout_marginRight="10dp"
                 android:id="@+id/backButton"
                 android:onClick="sendMessage"
-                android:background="@drawable/arrow2" />
+                android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
 
             <TextView
                 android:layout_width="wrap_content"

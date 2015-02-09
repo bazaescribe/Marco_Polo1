@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.joseluisrosasbaza.marco_polo1.splashActivity"
-    android:background="#ffc51162">
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,11 +13,11 @@
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:paddingTop="30dp">
+        android:paddingTop="40dp">
 
         <ImageView
             android:layout_width="300dp"
-            android:layout_height="330dp"
+            android:layout_height="300dp"
             android:id="@+id/imageView"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/icon" />

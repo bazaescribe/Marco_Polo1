@@ -13,6 +13,8 @@
     </style>
 
 
-    <color name="colorPrimary">#FF1744</color>
+    <color name="colorPrimary">#9a074a</color>
     <color name="colorPrimaryDark">#C51162</color>
+    <color name="white">#ffffff</color>
+    <color name="white_press">#bbbbbb</color>
 </resources>
